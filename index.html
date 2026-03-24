@@ -850,6 +850,26 @@ footer {
   transform: translateY(0);
 }
 
+/* ── MOBILE PORTRAIT & HAMBURGER (desktop hidden) ── */
+.mobile-portrait {
+  display: none;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  z-index: 101;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 2px;
+  background: var(--ink);
+  transition: all 0.3s ease;
+}
+
 /* ── RESPONSIVE ── */
 @media (max-width: 900px) {
   nav { padding: 1.1rem 1.8rem; }
@@ -868,6 +888,70 @@ footer {
   .featured-work, .writing-content, .clients-strip { padding: 3rem 1.8rem; }
   .work-hero-header, .writing-hero-header { padding: 4rem 1.8rem 2rem; }
   .writing-grid { grid-template-columns: 1fr; }
+
+  /* 1. Show mobile profile photo */
+  .mobile-portrait {
+    display: block;
+    width: 200px;
+    height: 240px;
+    object-fit: cover;
+    border: 1px solid var(--border);
+    margin: 1.5rem 0;
+  }
+
+  /* 2. Stack the 'Get in Touch' and 'See my Work' buttons */
+  .hero-cta {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+  }
+  .hero-cta a {
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* 3. Align "What I Do" section with the Hero section */
+  #home-hero, #services-section {
+    padding-left: 1.8rem;
+    padding-right: 1.8rem;
+  }
+
+  /* 4. Hamburger Menu Styles */
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    max-width: 300px;
+    height: 100vh;
+    background: var(--warm-white);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.05);
+    transition: right 0.4s ease;
+    z-index: 100;
+  }
+
+  .nav-links.active-menu {
+    right: 0;
+  }
+
+  /* Hamburger Animation */
+  .hamburger.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
 }
 @media (max-width: 600px) {
   .services-grid { grid-template-columns: 1fr; }
@@ -890,6 +974,13 @@ footer {
 <!-- NAVIGATION -->
 <nav id="navbar">
   <a href="#" class="nav-logo" onclick="showPage('home',this)">RK</a>
+
+  <div class="hamburger" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
   <ul class="nav-links">
     <li><a href="#" onclick="showPage('home',this)" data-page="home" class="active-link">Home</a></li>
     <li><a href="#" onclick="showPage('work',this)" data-page="work">Work</a></li>
@@ -908,6 +999,7 @@ footer {
     <div class="hero-text">
       <p class="hero-eyebrow">Arts Marketing &amp; Social Media Specialist</p>
       <h1 class="hero-name">Rachel<br>Klarnetatzi</h1>
+      <img src="images/rachel-portrait.jpg" alt="Rachel Klarnetatzi" class="mobile-portrait">
       <p class="hero-tagline">Strategic Arts Marketing &amp; Social Media Specialist with 5+ years of professional experience.</p>
       <p class="hero-bio">
         With an extensive background across the creative arts, I provide specialised digital communications consultancy for visual artists and galleries. I lead with social media strategy and content management, implementing data-driven campaigns that amplify reach and engagement. I have led the content strategy and production for exhibitions and art fairs, and worked with both emerging and established artists worldwide including Antony Gormley, Theaster Gates, Anselm Kiefer, Georg Baselitz and Beatriz Milhazes, among others.
@@ -998,7 +1090,7 @@ footer {
   <footer>
     <span class="footer-name">Rachel Klarnetatzi</span>
     <div class="footer-center">
-      <a href="mailto:rachelklarnetatzi@gmail.com" class="footer-icon-link" title="Email">
+      <a href="/cdn-cgi/l/email-protection#6a180b09020f0601060b18040f1e0b1e10032a0d070b030644090507" class="footer-icon-link" title="Email">
         <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
       </a>
       <a href="https://www.linkedin.com/in/rachelklarnetatzi/" target="_blank" class="footer-icon-link" title="LinkedIn">
@@ -1142,7 +1234,7 @@ footer {
   <footer>
     <span class="footer-name">Rachel Klarnetatzi</span>
     <div class="footer-center">
-      <a href="mailto:rachelklarnetatzi@gmail.com" class="footer-icon-link" title="Email">
+      <a href="/cdn-cgi/l/email-protection#9ceefdfff4f9f0f7f0fdeef2f9e8fde8e6f5dcfbf1fdf5f0b2fff3f1" class="footer-icon-link" title="Email">
         <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
       </a>
       <a href="https://www.linkedin.com/in/rachelklarnetatzi/" target="_blank" class="footer-icon-link" title="LinkedIn">
@@ -1202,7 +1294,7 @@ footer {
   <footer>
     <span class="footer-name">Rachel Klarnetatzi</span>
     <div class="footer-center">
-      <a href="mailto:rachelklarnetatzi@gmail.com" class="footer-icon-link" title="Email">
+      <a href="/cdn-cgi/l/email-protection#d7a5b6b4bfb2bbbcbbb6a5b9b2a3b6a3adbe97b0bab6bebbf9b4b8ba" class="footer-icon-link" title="Email">
         <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
       </a>
       <a href="https://www.linkedin.com/in/rachelklarnetatzi/" target="_blank" class="footer-icon-link" title="LinkedIn">
@@ -1234,7 +1326,7 @@ footer {
 
       <div class="social-icons">
         <!-- Email -->
-        <a href="mailto:rachelklarnetatzi@gmail.com" class="social-icon-link">
+        <a href="/cdn-cgi/l/email-protection#9ceefdfff4f9f0f7f0fdeef2f9e8fde8e6f5dcfbf1fdf5f0b2fff3f1" class="social-icon-link">
           <div class="social-icon-box">
             <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
           </div>
@@ -1271,7 +1363,7 @@ footer {
   <footer>
     <span class="footer-name">Rachel Klarnetatzi</span>
     <div class="footer-center">
-      <a href="mailto:rachelklarnetatzi@gmail.com" class="footer-icon-link" title="Email">
+      <a href="/cdn-cgi/l/email-protection#067467656e636a6d6a677468637267727c6f46616b676f6a2865696b" class="footer-icon-link" title="Email">
         <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
       </a>
       <a href="https://www.linkedin.com/in/rachelklarnetatzi/" target="_blank" class="footer-icon-link" title="LinkedIn">
@@ -1285,7 +1377,7 @@ footer {
   </footer>
 </div>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   /* ── PAGE ROUTING ── */
   function showPage(name, triggerEl) {
     // Hide all pages
@@ -1318,18 +1410,33 @@ footer {
       entries.forEach((entry, i) => {
         if (entry.isIntersecting) {
           setTimeout(() => {
-            entry.target.classList.add('visible');
-          }, (i % 4) * 100);
-          observer.unobserve(entry.target);
+                      entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }, i * 100);
         }
       });
     }, { threshold: 0.12 });
     revealEls.forEach(el => observer.observe(el));
   }
+  setupReveal();
 
-  /* ── INIT ── */
-  document.addEventListener('DOMContentLoaded', function() {
-    setupReveal();
+  /* ── HAMBURGER MENU ── */
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.querySelector('.nav-links');
+  const navItems = document.querySelectorAll('.nav-links a');
+
+  // Toggle menu when clicking the hamburger
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navLinks.classList.toggle('active-menu');
+  });
+
+  // Close the menu automatically when a page link is clicked
+  navItems.forEach(item => {
+    item.addEventListener('click', () => {
+      hamburger.classList.remove('active');
+      navLinks.classList.remove('active-menu');
+    });
   });
 </script>
 </body>
