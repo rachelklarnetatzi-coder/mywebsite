@@ -344,7 +344,7 @@ section {
   z-index: 2;
 }
 
-.portrait-label {
+.portrait-label, .photo-credit {
   position: absolute;
   bottom: 1.5rem;
   right: 1.5rem;
@@ -354,6 +354,13 @@ section {
   text-transform: uppercase;
   color: var(--muted);
   z-index: 2;
+}
+
+.photo-credit {
+  bottom: 0.8rem;
+  right: 1rem;
+  color: rgba(255,255,255,0.75);
+  text-shadow: 0 1px 3px rgba(0,0,0,0.4);
 }
 
 /* ── SERVICES ── */
@@ -973,7 +980,7 @@ footer {
 
 <!-- NAVIGATION -->
 <nav id="navbar">
-  <a href="#" class="nav-logo" onclick="showPage('home',this)">RK</a>
+  <a href="/" class="nav-logo" onclick="showPage('home',this); return false;">RK</a>
 
   <div class="hamburger" id="hamburger">
     <span></span>
@@ -982,10 +989,10 @@ footer {
   </div>
 
   <ul class="nav-links">
-    <li><a href="#" onclick="showPage('home',this)" data-page="home" class="active-link">Home</a></li>
-    <li><a href="#" onclick="showPage('work',this)" data-page="work">Work</a></li>
-    <li><a href="#" onclick="showPage('writing',this)" data-page="writing">Writing</a></li>
-    <li><a href="#" onclick="showPage('contact',this)" data-page="contact">Contact</a></li>
+    <li><a href="/" onclick="showPage('home',this); return false;" data-page="home" class="active-link">Home</a></li>
+    <li><a href="/work" onclick="showPage('work',this); return false;" data-page="work">Work</a></li>
+    <li><a href="/writing" onclick="showPage('writing',this); return false;" data-page="writing">Writing</a></li>
+    <li><a href="/contact" onclick="showPage('contact',this); return false;" data-page="contact">Contact</a></li>
   </ul>
 </nav>
 
@@ -1005,8 +1012,8 @@ footer {
         With an extensive background across the creative arts, I provide specialised digital communications consultancy for visual artists and galleries. I lead with social media strategy and content management, implementing data-driven campaigns that amplify reach and engagement. I have led the content strategy and production for exhibitions and art fairs, and worked with both emerging and established artists worldwide including Antony Gormley, Theaster Gates, Anselm Kiefer, Georg Baselitz and Beatriz Milhazes, among others.
       </p>
       <div class="hero-cta">
-        <a href="#" class="btn-primary" onclick="showPage('contact',null)">Get in touch</a>
-        <a href="#" class="btn-ghost" onclick="showPage('work',null)">See my work &rarr;</a>
+        <a href="/contact" class="btn-primary" onclick="showPage('contact',null); return false;">Get in touch</a>
+        <a href="/work" class="btn-ghost" onclick="showPage('work',null); return false;">See my work &rarr;</a>
       </div>
     </div>
     <div class="hero-image-col">
@@ -1090,7 +1097,7 @@ footer {
   <footer>
     <span class="footer-name">Rachel Klarnetatzi</span>
     <div class="footer-center">
-      <a href="/cdn-cgi/l/email-protection#6a180b09020f0601060b18040f1e0b1e10032a0d070b030644090507" class="footer-icon-link" title="Email">
+      <a href="mailto:rachelklarnetatzi@gmail.com" class="footer-icon-link" title="Email">
         <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
       </a>
       <a href="https://www.linkedin.com/in/rachelklarnetatzi/" target="_blank" class="footer-icon-link" title="LinkedIn">
@@ -1194,6 +1201,7 @@ footer {
     <div class="work-item reverse reveal">
       <div class="work-image-wrap">
         <img src="images/zimbabwe-bird-stones.jpg" alt="Zimbabwe Art Bird Stones, photo © Duncan Wylie" style="width:100%;height:100%;object-fit:cover;display:block;">
+        <span class="photo-credit">&copy; Dzimba Publishing. Photo &copy; Duncan Wylie</span>
         <div class="work-image-shadow"></div>
       </div>
       <div class="work-content">
@@ -1234,7 +1242,7 @@ footer {
   <footer>
     <span class="footer-name">Rachel Klarnetatzi</span>
     <div class="footer-center">
-      <a href="/cdn-cgi/l/email-protection#9ceefdfff4f9f0f7f0fdeef2f9e8fde8e6f5dcfbf1fdf5f0b2fff3f1" class="footer-icon-link" title="Email">
+      <a href="mailto:rachelklarnetatzi@gmail.com" class="footer-icon-link" title="Email">
         <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
       </a>
       <a href="https://www.linkedin.com/in/rachelklarnetatzi/" target="_blank" class="footer-icon-link" title="LinkedIn">
@@ -1294,7 +1302,7 @@ footer {
   <footer>
     <span class="footer-name">Rachel Klarnetatzi</span>
     <div class="footer-center">
-      <a href="/cdn-cgi/l/email-protection#d7a5b6b4bfb2bbbcbbb6a5b9b2a3b6a3adbe97b0bab6bebbf9b4b8ba" class="footer-icon-link" title="Email">
+      <a href="mailto:rachelklarnetatzi@gmail.com" class="footer-icon-link" title="Email">
         <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
       </a>
       <a href="https://www.linkedin.com/in/rachelklarnetatzi/" target="_blank" class="footer-icon-link" title="LinkedIn">
@@ -1326,7 +1334,7 @@ footer {
 
       <div class="social-icons">
         <!-- Email -->
-        <a href="/cdn-cgi/l/email-protection#9ceefdfff4f9f0f7f0fdeef2f9e8fde8e6f5dcfbf1fdf5f0b2fff3f1" class="social-icon-link">
+        <a href="mailto:rachelklarnetatzi@gmail.com" class="social-icon-link">
           <div class="social-icon-box">
             <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
           </div>
@@ -1363,7 +1371,7 @@ footer {
   <footer>
     <span class="footer-name">Rachel Klarnetatzi</span>
     <div class="footer-center">
-      <a href="/cdn-cgi/l/email-protection#067467656e636a6d6a677468637267727c6f46616b676f6a2865696b" class="footer-icon-link" title="Email">
+      <a href="mailto:rachelklarnetatzi@gmail.com" class="footer-icon-link" title="Email">
         <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
       </a>
       <a href="https://www.linkedin.com/in/rachelklarnetatzi/" target="_blank" class="footer-icon-link" title="LinkedIn">
@@ -1377,9 +1385,9 @@ footer {
   </footer>
 </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
   /* ── PAGE ROUTING ── */
-  function showPage(name, triggerEl) {
+  function showPage(name, triggerEl, skipPush) {
     // Hide all pages
     document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
     // Show target
@@ -1390,12 +1398,40 @@ footer {
       a.classList.remove('active-link');
       if (a.dataset.page === name) a.classList.add('active-link');
     });
+    // Update URL
+    if (!skipPush) {
+      const path = name === 'home' ? '/' : '/' + name;
+      history.pushState({ page: name }, '', path);
+    }
     // Scroll to top
     window.scrollTo({ top: 0, behavior: 'smooth' });
     // Re-run reveal observer on new page
     setupReveal();
     return false;
   }
+
+  // Handle browser back/forward buttons
+  window.addEventListener('popstate', function(e) {
+    const page = (e.state && e.state.page) ? e.state.page : getPageFromPath();
+    showPage(page, null, true);
+  });
+
+  // Determine page from URL path
+  function getPageFromPath() {
+    const path = window.location.pathname.replace(/^\/+|\/+$/g, '');
+    if (path === 'work' || path === 'writing' || path === 'contact') return path;
+    return 'home';
+  }
+
+  // On initial load, show the correct page based on URL
+  (function() {
+    const page = getPageFromPath();
+    if (page !== 'home') {
+      showPage(page, null, true);
+    }
+    // Set initial history state
+    history.replaceState({ page: page }, '', window.location.pathname);
+  })();
 
   /* ── NAV SCROLL ── */
   const navbar = document.getElementById('navbar');
